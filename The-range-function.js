@@ -44,3 +44,13 @@ function range(start, end, step) {
 }
 
 // or
+
+function range(start, end, step) {
+  if (arguments.length===1) return range(0, start, 1);
+  if (arguments.length===2) return range(start, end, 1);
+  let ret = [];
+  for (i=0; i<(end-start)/(step||1); i++) {
+      ret.push(start+(i*step));
+  }
+  return ret;
+}
